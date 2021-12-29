@@ -3,6 +3,7 @@ import { collection, onSnapshot, getFirestore } from "firebase/firestore";
 import { app } from "../../firebaseConfig";
 import Plus from "../../image/plus.png";
 import { addPost } from "../firebase/firebase-firestore";
+import styles from "./Post.module.css";
 
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -104,14 +105,16 @@ function Post() {
   };
   console.log(posteos);
   return (
-    <div className="">
+    <div>
+       <div className={styles.post_nav}>
       <Button onClick={() => openModal()}>
         <img src={Plus} alt="boton para agregar post" />
       </Button>
       <Button onClick={() => logout()} variant="outlined">
         Salir
       </Button>
-      <Modal
+      </div>
+      <Modal 
         open={open}
         onClose={() => closeModal()}
         aria-labelledby="modal-modal-title"
@@ -183,6 +186,7 @@ function Post() {
         </Box>
       </Modal>
       <Container id="container">
+     
         {posteos.map((item) => (
           <Card
             key={item.idPost}

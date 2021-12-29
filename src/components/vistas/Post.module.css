@@ -1,0 +1,8 @@
+.post_nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
